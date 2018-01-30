@@ -14,7 +14,7 @@ module.exports = function karmaConfig (config) {
     // 2. add it to the `browsers` array below.
     browsers: ['PhantomJS'],
     frameworks: ['mocha', 'sinon-chai', 'phantomjs-shim'],
-    reporters: ['spec', 'coverage', 'htmlDetailed'],
+    reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
@@ -34,8 +34,7 @@ module.exports = function karmaConfig (config) {
 
       // Reporters
       'karma-spec-reporter',
-      'karma-coverage',
-      'karma-html-detailed-reporter'
+      'karma-coverage'
     ],
     webpack: webpackConfig,
     webpackMiddleware: {
@@ -46,10 +45,6 @@ module.exports = function karmaConfig (config) {
       reporters: [
         { type: 'lcov', subdir: '.' },
         { type: 'text-summary' }      ]
-    },
-    htmlDetailed: {
-      dir: './reports',
-      splitResults: false
     }
   })
 }
