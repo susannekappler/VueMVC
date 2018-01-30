@@ -7,17 +7,36 @@ var webpackConfig = require('../../build/webpack.test.conf')
 
 module.exports = function karmaConfig (config) {
   config.set({
+    autoWatch: true,
     // to run in additional browsers:
     // 1. install corresponding karma launcher
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
     browsers: ['PhantomJS'],
     frameworks: ['mocha', 'sinon-chai', 'phantomjs-shim'],
-    reporters: ['spec', 'coverage'],
+    reporters: ['spec', 'coverage', 'htmlDetailed'],
     files: ['./index.js'],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
     },
+    plugins: [
+      // Launchers
+      'karma-phantomjs-launcher',
+
+      // Test Libraries
+      'karma-mocha',
+      'karma-sinon-chai',
+      'karma-phantomjs-shim',
+
+      // Preprocessors
+      'karma-webpack',
+      'karma-sourcemap-loader',
+
+      // Reporters
+      'karma-spec-reporter',
+      'karma-coverage',
+      'karma-html-detailed-reporter'
+    ],
     webpack: webpackConfig,
     webpackMiddleware: {
       noInfo: true
@@ -26,8 +45,11 @@ module.exports = function karmaConfig (config) {
       dir: './coverage',
       reporters: [
         { type: 'lcov', subdir: '.' },
-        { type: 'text-summary' }
-      ]
+        { type: 'text-summary' }      ]
+    },
+    htmlDetailed: {
+      dir: './reports',
+      splitResults: false
     }
   })
 }
