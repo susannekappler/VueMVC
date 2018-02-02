@@ -7,20 +7,20 @@ import About from '@/components/About'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/VueMVC',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/VueMVC/about',
-      name: 'About',
-      component: About
-    },
-    { path: '*',
-      component: NotFound
-    }
-  ]
+	mode: 'history',
+	routes: [
+		{
+			path: '/VueMVC',
+			name: 'HelloWorld',
+			component: HelloWorld
+		},
+		{
+			path: '/VueMVC/about',
+			name: 'About',
+			component: About
+		},
+		{ path: '*',
+			component: NotFound
+		}
+	]
 })

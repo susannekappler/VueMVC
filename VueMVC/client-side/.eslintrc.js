@@ -26,6 +26,8 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // use tabs for indentation
-    'indent': ["error", "tab"]
+    'indent': ["error", "tab"],
+    // allow tabs
+    'no-tabs': 0
   }
 }
