@@ -10,12 +10,12 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/VueMVC',
       name: 'HelloWorld',
       component: HelloWorld
     },
     {
-      path: '/about',
+      path: '/VueMVC/about',
       name: 'About',
       component: About
     },

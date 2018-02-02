@@ -35,6 +35,9 @@
           Twitter
         </a>
       </li>
+      <li>
+        <router-link to="about">About</router-link>
+      </li>
       <br>
       <li>
         <a

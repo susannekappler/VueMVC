@@ -1,0 +1,27 @@
+﻿@using Settings = VueMVC.Helpers.Settings
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <base href="/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="@(Settings.WebpackDevServerRoot)/app.css" rel="stylesheet">
+</head>
+<body>
+    <div>
+        @RenderBody()
+        
+        <div id="app">
+            Loading ...
+
+            <router-view></router-view>
+        </div>
+
+        <script type="text/javascript" src="@(Settings.WebpackDevServerRoot)/app.js"></script>
+    </div>
+</body>
+</html>
+
